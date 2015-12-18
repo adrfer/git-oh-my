@@ -1,0 +1,14 @@
+# For more info about `gitignore`, open a terminal and run this command:
+#
+#   man gitignore
+#
+# Or check git-scm.com/docs/gitignore.
+#
+# Also, refer to github.com/github/gitignore for a collection of useful templates.
+
+.DS_Store
+.Spotlight-V100
+.Trashes
+
+# Thumbnails
+._*
