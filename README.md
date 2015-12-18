@@ -1,5 +1,5 @@
 # Git Oh My
-Quick and dirty git configuration files for the lazy ones.
+Quick and dirty git files for the lazy ones.
 
 Code tested in `GNU bash 3.2.57` and `Git 2.5.4`.
 
