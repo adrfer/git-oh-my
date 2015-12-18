@@ -85,10 +85,22 @@ remote_gitignore="${local_repo}/gitignore"
 local_gitconfig="${HOME}/.gitconfig"
 local_gitignore="${HOME}/.gitignore"
 
-# Link local profile
+# Link local files
 
 ln -sf "${remote_gitconfig}" "${local_gitconfig}"
 ln -sf "${remote_gitignore}" "${local_gitignore}"
+
+# Set up credentials
+
+echo 'Now, updating your credentials...'
+
+name_prompt='Your name: '
+read -r -p "${name_prompt}" name
+git config --global user.name "${name}"
+
+email_prompt='Your email: '
+read -r -p "${email_prompt}" email
+git config --global user.email "${email}"
 
 echo 'Update successful, enjoy!'
 exit 0
