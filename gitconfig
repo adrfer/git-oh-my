@@ -5,8 +5,8 @@
 # Or check git-scm.com/docs/git-config.
 
 [user]
-  name = [USER]
-  email = EMAIL
+  name =
+  email =
 [alias]
   br = branch
   branches = branch --all
