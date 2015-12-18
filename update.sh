@@ -59,6 +59,7 @@ if [[ ! -d "${local_repo}" ]]; then
   if git clone --quiet "${remote_repo}" "${local_repo}" &>/dev/null; then
     echo ' done.'
   else
+    echo
     echo 'Ooops, there was an error, try again.'
     exit 1
   fi
@@ -73,6 +74,7 @@ echo -n "Updating local repo ${local_repo}..."
 if git pull --quiet origin master &>/dev/null; then
   echo ' done.'
 else
+  echo
   echo 'Ooops, there was an error, try again.'
   exit 1
 fi

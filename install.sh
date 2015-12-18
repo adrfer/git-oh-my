@@ -56,6 +56,7 @@ echo -n "Cloning repo into ${local_repo}..."
 if git clone --quiet "${remote_repo}" "${local_repo}" &>/dev/null; then
   echo ' done.'
 else
+  echo
   echo 'Ooops, there was an error, try again.'
   exit 1
 fi
