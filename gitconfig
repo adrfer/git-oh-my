@@ -1,0 +1,42 @@
+# For more info about `git-config`, open a terminal and run this command:
+#
+#   man git-config
+#
+# Or check git-scm.com/docs/git-config.
+
+[user]
+  name = [USER]
+  email = EMAIL
+[alias]
+  br = branch
+  branches = branch --all
+  delete-local-branch = branch --delete
+  delete-remote-branch = push origin --delete
+  delete-local-remote-tracking-branch = branch --delete --remotes
+  ci = commit
+  commit-staged-and-modified = commit --all --message
+  commit-all = add --all && commit-staged-and-modified
+  amend-last-commit-message = commit --amend
+  co = checkout
+  cl = clone
+  ll = pull
+  sh = push
+  st = status
+  unstage = reset HEAD --
+  log-last = log -1
+  contributors = shortlog --summary --numbered
+  pretty-log = log --pretty=format:'%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>'
+  remotes = remote --verbose
+  tags = tag --list
+  visual = !gitk
+[color]
+  ui = auto
+[core]
+  pager = less
+  editor = vim
+  whitespace = space-before-tab, trailing-space
+  excludesfile = ~/.gitignore
+[push]
+  default = simple
+[help]
+  autocorrect = 1
