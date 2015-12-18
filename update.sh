@@ -70,7 +70,7 @@ cd "${local_repo}"
 
 echo -n "Updating local repo ${local_repo}..."
 
-if git pull --quiet --rebase origin master &>/dev/null; then
+if git pull --quiet origin master &>/dev/null; then
   echo ' done.'
 else
   echo 'Ooops, there was an error, try again.'
