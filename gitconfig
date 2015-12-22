@@ -18,6 +18,7 @@
   commit-all = add --all && commit-staged-and-modified
   amend-last-commit-message = commit --amend
   co = checkout
+  discard-changes = checkout --
   cl = clone
   ll = pull
   sh = push
