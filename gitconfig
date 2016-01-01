@@ -8,6 +8,7 @@
   name =
   email =
 [alias]
+  bl = blame
   br = branch
   branches = branch --all
   delete-local-branch = branch --delete
