@@ -26,6 +26,8 @@
 
   # show modified files in working directory, staged for next commit
   st = status
+
+  # add a file as it looks now to next commit
   stage = add
   unstage = reset HEAD --
   log-last = log -1
