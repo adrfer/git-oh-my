@@ -38,6 +38,7 @@
   pager = less
   editor = vim
   whitespace = space-before-tab, trailing-space
+  autocrlf = input
   excludesfile = ~/.gitignore
 [push]
   default = simple
