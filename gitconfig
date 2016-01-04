@@ -23,6 +23,8 @@
   cl = clone
   ll = pull
   sh = push
+
+  # show modified files in working directory, staged for next commit
   st = status
   stage = add
   unstage = reset HEAD --
