@@ -36,6 +36,9 @@
   # diff of what is changed but not staged
   show-staged-changes = diff
 
+  # diff of what is staged but not yet committed
+  show-unstaged-changes = diff --staged
+
   visual = !gitk
 [color]
   ui = auto
