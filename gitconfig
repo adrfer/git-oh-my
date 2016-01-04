@@ -24,6 +24,7 @@
   ll = pull
   sh = push
   st = status
+  stage = add
   unstage = reset HEAD --
   log-last = log -1
   contributors = shortlog --summary --numbered
