@@ -32,6 +32,10 @@
   remotes = remote --verbose
   tags = tag --list
   aliases = config --get-regexp '^alias\\.'
+
+  # diff of what is changed but not staged
+  show-staged-changes = diff
+
   visual = !gitk
 [color]
   ui = auto
