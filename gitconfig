@@ -21,6 +21,7 @@
   commit-all = add --all && commit-staged-and-modified
   commit-by-ammending-last-commit-message = commit --amend
 
+  # switch to another branch and check it out into working directory
   co = checkout
   discard-changes = checkout --
   cl = clone
