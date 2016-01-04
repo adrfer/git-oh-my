@@ -19,7 +19,7 @@
   ci = commit
   commit-staged-and-modified = commit --all --message
   commit-all = add --all && commit-staged-and-modified
-  amend-last-commit-message = commit --amend
+  commit-by-ammending-last-commit-message = commit --amend
 
   co = checkout
   discard-changes = checkout --
