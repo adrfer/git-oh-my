@@ -14,10 +14,13 @@
   delete-local-branch = branch --delete
   delete-remote-branch = push origin --delete
   delete-local-remote-tracking-branch = branch --delete --remotes
+
+  # commit staged content as a new commit snapshot
   ci = commit
   commit-staged-and-modified = commit --all --message
   commit-all = add --all && commit-staged-and-modified
   amend-last-commit-message = commit --amend
+
   co = checkout
   discard-changes = checkout --
   cl = clone
