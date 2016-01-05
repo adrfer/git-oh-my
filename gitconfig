@@ -8,28 +8,18 @@
   name =
   email =
 [alias]
-  bl = blame
-  br = branch
   branches = branch --all
   delete-local-branch = branch --delete
   delete-remote-branch = push origin --delete
   delete-local-remote-tracking-branch = branch --delete --remotes
 
   # commit staged content as a new commit snapshot
-  ci = commit
   commit-staged-and-modified = commit --all --message
   commit-all = add --all && commit-staged-and-modified
   commit-by-ammending-last-commit-message = commit --amend
 
   # switch to another branch and check it out into working directory
-  co = checkout
   discard-changes = checkout --
-  cl = clone
-  ll = pull
-  sh = push
-
-  # show modified files in working directory, staged for next commit
-  st = status
 
   # add a file as it looks now to next commit
   stage = add
