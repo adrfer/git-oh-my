@@ -8,36 +8,50 @@
   name =
   email =
 [alias]
-  branches = branch --all
-  delete-local-branch = branch --delete
-  delete-remote-branch = push origin --delete
-  delete-local-remote-tracking-branch = branch --delete --remotes
 
-  # commit staged content as a new commit snapshot
-  commit-staged-and-modified = commit --all --message
-  commit-all = add --all && commit-staged-and-modified
+  # add/remove files to/from next commit
+  stage = add #<file or dir>
+  unstage = reset HEAD -- #<file>
+
+  # discard changes in working directory
+  discard-changed-but-not-staged = checkout -- #<file>
+
+  # change an existing file path and stage the move
+  rename-and-stage = mv #<old file> <new file>
+
+  # delete the file and stage the removal for commit
+  delete-and-stage = rm #<file>
+
+  # diff changes of what is staged and unstaged
+  show-changed-but-not-staged = diff
+  show-staged-but-not-commited = diff --staged
+
+  # commit staged content as a new commit
+  commit-staged-and-modified = commit --all --message #<message>
+  commit-all = add --all && commit-staged-and-modified #<message>
   commit-by-ammending-last-commit-message = commit --amend
 
-  # switch to another branch and check it out into working directory
-  discard-changes = checkout --
+  # list and delete local and remote branches
+  show-branches = branch --all
+  delete-local-branch = branch --delete #<branch>
+  delete-remote-branch = push origin --delete #<branch>
+  delete-obsolete-local-remote-tracking-branches = fetch origin --prune
 
-  # add a file as it looks now to next commit
-  stage = add
-  unstage = reset HEAD --
-  log-last = log -1
-  contributors = shortlog --summary --numbered
-  pretty-log = log --pretty=format:'%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>'
-  remotes = remote --verbose
-  tags = tag --list
-  aliases = config --get-regexp '^alias\\.'
+  # show the commit history for the currently active branch
+  log-last-commit = log -1
+  log-contributors = shortlog --summary --numbered
+  log-pretty = log --pretty=format:'%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>'
+  log-commits-that-changed-file = log --oneline --follow #<file>
 
-  # diff of what is changed but not staged
-  show-staged-changes = diff
+  # list all defined remotes
+  show-remotes = remote --verbose
 
-  # diff of what is staged but not yet committed
-  show-unstaged-changes = diff --staged
+  # list all created tags
+  show-tags = tag --list
 
-  visual = !gitk
+  # list all defined aliases
+  show-aliases = config --get-regexp '^alias\\.'
+
 [color]
   ui = auto
 [core]
