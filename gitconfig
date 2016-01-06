@@ -29,7 +29,7 @@
   # commit staged content as a new commit
   commit-staged = commit --message #<message>
   commit-staged-and-modified = commit --all --message #<message>
-  commit-all = add --all && commit-staged-and-modified #<message>
+  commit-staged-modified-and-removed = add --all && commit-staged-and-modified #<message>
   commit-by-ammending-last-commit-message = commit --amend
 
   # list and delete local and remote branches
