@@ -12,7 +12,7 @@ fi
 
 # Check if git is available
 
-if ! command -v 'git' &>/dev/null; then
+if ! command -v 'git' >/dev/null 2>&1; then
   echo -n 'Ooops, git not found. '
   read -r -p 'Install it (y/n [n])? '
 
@@ -21,7 +21,7 @@ if ! command -v 'git' &>/dev/null; then
     exit 0
   fi
 
-  if ! command -v 'xcode-select' &>/dev/null; then
+  if ! command -v 'xcode-select' >/dev/null 2>&1; then
     echo 'Ooops, Xcode not found. '
     read -r -p 'Install it (y/n [n])? '
 
@@ -30,7 +30,7 @@ if ! command -v 'git' &>/dev/null; then
       exit 0
     fi
 
-    if ! 'xcode-select' --install &>/dev/null; then
+    if ! 'xcode-select' --install >/dev/null 2>&1; then
       exit 1
     fi
   fi
@@ -53,7 +53,7 @@ fi
 
 echo -n "Cloning repo into ${local_repo}..."
 
-if git clone --quiet "${remote_repo}" "${local_repo}" &>/dev/null; then
+if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
   echo ' done.'
 else
   echo
