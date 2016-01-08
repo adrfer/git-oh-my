@@ -14,7 +14,7 @@
   unstage = reset HEAD -- #<file>
 
   # discard changes in working directory
-  discard-changed-but-not-staged = checkout -- #<file>
+  discard-modified-but-not-staged = checkout -- #<file>
 
   # change an existing file path and stage the move
   rename-and-stage = mv #<old file> <new file>
