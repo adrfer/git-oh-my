@@ -42,7 +42,7 @@
   log-last-commit = log -1
   log-contributors = shortlog --summary --numbered
   log-pretty = log --pretty=format:'%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>'
-  log-commits-that-changed-file = log --oneline --follow #<file>
+  log-commits-that-modified-file = log --oneline --follow #<file>
 
   # list all defined remotes
   show-remotes = remote --verbose
