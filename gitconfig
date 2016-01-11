@@ -44,6 +44,7 @@
   log-contributors = shortlog --summary --numbered
   log-pretty = log --pretty=format:'%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>'
   log-commits-that-modified-file = log --oneline --follow #<file>
+  log-commits-not-yet-pushed = log-pretty origin/master..master
 
   # list all defined remotes
   show-remotes = remote --verbose
