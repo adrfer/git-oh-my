@@ -61,6 +61,8 @@
   pager = less
   editor = vim
   whitespace = space-before-tab, trailing-space
+
+  # prevent CRLFs from getting written into the repository by converting them to LF
   autocrlf = input
   excludesfile = ~/.gitignore
 
