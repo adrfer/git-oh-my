@@ -12,6 +12,7 @@
 
   # add/remove files to/from next commit
   stage = add #<file or dir>
+  stage-all = add .
   unstage = reset HEAD -- #<file>
   unstage-all = reset HEAD
 
