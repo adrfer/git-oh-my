@@ -41,6 +41,10 @@
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
 
+  # list and delete ignored files that are still lurking at the repository
+  show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
+  delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage-all && git commit-staged #<message>
+
   # show the commit history for the currently active branch
   log-last-commit = log -1
   log-contributors = shortlog --summary --numbered
