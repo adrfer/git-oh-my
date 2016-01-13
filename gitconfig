@@ -13,6 +13,7 @@
   # add/remove files to/from next commit
   stage = add #<file or dir>
   unstage = reset HEAD -- #<file>
+  unstage-all = reset HEAD
 
   # discard changes in working directory
   discard-modified-but-not-staged = checkout -- #<file>
