@@ -72,6 +72,8 @@
 
   # prevent CRLFs from getting written into the repository by converting them to LF
   autocrlf = input
+
+  # set globally patterns of files which are not meant to be tracked
   excludesfile = ~/.gitignore
 
 [push]
