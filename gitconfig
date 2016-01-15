@@ -36,7 +36,7 @@
   commit-modified-staged-and-removed = !git add --all && git commit-modified-and-staged #<message>
   commit-by-ammending-last-commit-message = commit --amend
 
-  # undo commited content
+  # undo commited content locally
   undo-last-commit-but-keep-staged = reset --soft HEAD~1
   undo-last-commit-for-good = reset --hard HEAD~1
 
