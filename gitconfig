@@ -18,6 +18,7 @@
 
   # discard changes in working directory
   discard-modified-but-not-staged = checkout -- #<file>
+  discard-all-modified-but-not-staged = checkout .
 
   # change an existing file path and stage the move
   rename-and-stage = mv #<old file> <new file>
