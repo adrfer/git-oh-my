@@ -65,7 +65,7 @@
   show-tags = tag --list
 
   # list all defined aliases
-  show-aliases = config --get-regexp '^alias\\.'
+  show-aliases = !git config --get-regexp 'alias.*' | sed 's/^alias\.//' | sed 's/[ ]/ = /' | sort
 
 [color]
   ui = auto
