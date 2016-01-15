@@ -38,6 +38,7 @@
 
   # list and delete local and remote branches
   show-branches = branch --all
+  create-and-checkout-branch = checkout -b #<branch>
   delete-local-branch = branch --delete #<branch>
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
