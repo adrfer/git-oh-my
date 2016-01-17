@@ -1,10 +1,12 @@
-# For more info about `gitignore`, open a terminal and run this command:
+# For more info about `gitignore`, open a terminal and run:
 #
 #   man gitignore
 #
-# Or check git-scm.com/docs/gitignore.
+# or
 #
-# Also, refer to github.com/github/gitignore for a collection of useful templates.
+#   git help ignore
+#
+# Also, check git-scm.com/docs/gitignore and/or refer to github.com/github/gitignore.
 
 .DS_Store
 .Spotlight-V100
