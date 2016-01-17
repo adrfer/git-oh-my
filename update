@@ -67,8 +67,8 @@ fi
 
 # Save credentials, if any
 
-local_user_name="$(git config user.name)"
-local_user_email="$(git config user.email)"
+name="$(git config user.name)"
+email="$(git config user.email)"
 
 # Update local repo
 
@@ -104,29 +104,29 @@ echo 'Now, updating your credentials...'
 
 name_prompt='Your name: '
 
-if [[ -n "${local_user_name}" ]]; then
-  echo -n "Last configure name is ${local_user_name}. "
+if [[ -n "${name}" ]]; then
+  echo -n "Last configure name is ${name}. "
   read -r -p 'Keep it (y/n [n])? '
 
   if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
-    read -r -p "${name_prompt}" local_user_name
+    read -r -p "${name_prompt}" name
   fi
 fi
 
-git config --global user.name "${local_user_name}"
+git config --global user.name "${name}"
 
 email_prompt='Your email: '
 
-if [[ -n "${local_user_email}" ]]; then
-  echo -n "Last configure email is ${local_user_email}. "
+if [[ -n "${email}" ]]; then
+  echo -n "Last configure email is ${email}. "
   read -r -p 'Keep it (y/n [n])? '
 
   if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
-    read -r -p "${email_prompt}" local_user_email
+    read -r -p "${email_prompt}" email
   fi
 fi
 
-git config --global user.email "${local_user_email}"
+git config --global user.email "${email}"
 
 echo 'Update successful, enjoy!'
 exit 0
