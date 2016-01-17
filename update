@@ -111,6 +111,8 @@ if [[ -n "${name}" ]]; then
   if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
     read -r -p "${name_prompt}" name
   fi
+else
+  read -r -p "${name_prompt}" name
 fi
 
 git config --global user.name "${name}"
@@ -124,6 +126,8 @@ if [[ -n "${email}" ]]; then
   if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
     read -r -p "${email_prompt}" email
   fi
+else
+  read -r -p "${email_prompt}" email
 fi
 
 git config --global user.email "${email}"
