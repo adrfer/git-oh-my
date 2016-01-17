@@ -1,8 +1,12 @@
-# For more info about `git-config`, open a terminal and run this command:
+# For more info about `git-config`, open a terminal and run:
 #
 #   man git-config
 #
-# Or check git-scm.com/docs/git-config.
+# or
+#
+#   git help config
+#
+# Also, check git-scm.com/docs/git-config.
 
 [user]
   name =
