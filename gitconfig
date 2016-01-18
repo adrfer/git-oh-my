@@ -62,6 +62,7 @@
   log-commits-that-modified-file = log --oneline --follow #<file>
   log-commits-not-yet-pushed = !git log-pretty origin/master..master
   log-commits-from-today = !git log-pretty --since='midnight'
+  log-commits-from-yesterday = !git log-pretty --since='yesterday' --until='midnight'
   log-commits-since-one-week-ago = !git log-pretty --since='1 week ago'
   log-commits-since-one-month-ago = !git log-pretty --since='1 month ago'
 
