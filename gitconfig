@@ -14,48 +14,48 @@
 
 [alias]
 
-  # add/remove files to/from next commit
+  # Add/remove files to/from next commit
   stage = add #<file or dir>
   stage-all = add .
   unstage = reset HEAD -- #<file>
   unstage-all = reset HEAD
 
-  # discard changes in working directory
+  # Discard changes in working directory
   discard-modified-but-not-staged = checkout -- #<file>
   discard-all-modified-but-not-staged = checkout .
 
-  # change an existing file path and stage the move
+  # Change an existing file path and stage the move
   rename-and-stage = mv #<old file> <new file>
 
-  # delete the file and stage the removal for commit
+  # Delete the file and stage the removal for commit
   delete-and-stage = rm #<file>
 
-  # diff changes of what is staged and unstaged
+  # Diff changes of what is staged and unstaged
   show-modified-but-not-staged = diff
   show-staged-but-not-commited = diff --staged
 
-  # commit staged content as a new commit
+  # Commit staged content as a new commit
   commit-staged = commit --message #<message>
   commit-modified-and-staged = commit --all --message #<message>
   commit-modified-staged-and-removed = !git add --all && git commit-modified-and-staged #<message>
   commit-by-amending-last-commit-message = commit --amend
 
-  # undo commited content locally
+  # Undo commited content locally
   undo-last-commit-but-keep-staged = reset --soft HEAD~1
   undo-last-commit-for-good = reset --hard HEAD~1
 
-  # list and delete local and remote branches
+  # List and delete local and remote branches
   show-branches = branch --all
   create-and-checkout-branch = checkout -b #<branch>
   delete-local-branch = branch --delete #<branch>
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
 
-  # list and delete ignored files that are still lurking at the repository
+  # List and delete ignored files that are still lurking at the repository
   show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
   delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage-all && git commit-staged #<message>
 
-  # show the commit history for the currently active branch
+  # Show the commit history for the currently active branch
   log-last-commit = log -1
   log-contributors = shortlog --summary --numbered
   log-pretty = log --pretty=format:'%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>'
@@ -64,13 +64,13 @@
   log-commits-since-one-week-ago = !git log-pretty --since='1 week ago'
   log-commits-since-one-month-ago = !git log-pretty --since='1 month ago'
 
-  # list all defined remotes
+  # List all defined remotes
   show-remotes = remote --verbose
 
-  # list all created tags
+  # List all created tags
   show-tags = tag --list
 
-  # list all defined aliases
+  # List all defined aliases
   show-aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
 
 [color]
@@ -82,15 +82,15 @@
   editor = vim
   whitespace = trailing-space
 
-  # prevent CRLFs from getting written into the repository by converting them to LF
+  # Prevent CRLFs from getting written into the repository by converting them to LF
   autocrlf = input
 
-  # set globally patterns of files which are not meant to be tracked
+  # Set globally patterns of files which are not meant to be tracked
   excludesfile = ~/.gitignore
 
 [push]
   default = simple
 
 [help]
-  # correct and execute automatically mistyped git commands, if not ambiguously
+  # Correct and execute automatically mistyped git commands, if not ambiguously
   autocorrect = 1
