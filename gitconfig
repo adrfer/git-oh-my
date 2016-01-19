@@ -82,6 +82,8 @@
 [core]
   pager = less
   editor = vim
+
+  # Highlight common whitespace problems when using git diff
   whitespace = trailing-space
 
   # Prevent CRLFs from getting written into the repository by converting them to LF
