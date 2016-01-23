@@ -41,6 +41,11 @@ fi
 remote_repo='https://github.com/adrfer/git-oh-my.git'
 local_repo="${HOME}/.git-oh-my"
 
+# Save credentials, if any
+
+name="$(git config user.name)"
+email="$(git config user.email)"
+
 # Check local repo
 
 if [[ -d "${local_repo}" ]]; then
@@ -79,11 +84,33 @@ ln -sf "${remote_gitignore}" "${local_gitignore}"
 echo 'Now, setting up your credentials...'
 
 name_prompt='Your name: '
-read -r -p "${name_prompt}" name
+
+if [[ -n "${name}" ]]; then
+  echo -n "Last configure name is ${name}. "
+  read -r -p 'Keep it (y/n [n])? '
+
+  if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
+    read -r -p "${name_prompt}" name
+  fi
+else
+  read -r -p "${name_prompt}" name
+fi
+
 git config --global user.name "${name}"
 
 email_prompt='Your email: '
-read -r -p "${email_prompt}" email
+
+if [[ -n "${email}" ]]; then
+  echo -n "Last configure email is ${email}. "
+  read -r -p 'Keep it (y/n [n])? '
+
+  if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
+    read -r -p "${email_prompt}" email
+  fi
+else
+  read -r -p "${email_prompt}" email
+fi
+
 git config --global user.email "${email}"
 
 echo 'Install successful, enjoy!'
