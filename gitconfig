@@ -84,7 +84,7 @@
   # Paginate using the pager specified
   pager = less
   
-  # Let editing commit messages by launching the editor specified
+  # Edit commit messages by launching the editor specified
   editor = vim
 
   # Highlight common whitespace problems when using git diff
