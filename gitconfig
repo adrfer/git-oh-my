@@ -80,6 +80,8 @@
   grep = always
 
 [core]
+  
+  # Paginate using the pager specified
   pager = less
   
   # Let editing commit messages by launching the editor specified
