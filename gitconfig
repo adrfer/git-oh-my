@@ -100,5 +100,6 @@
   default = simple
 
 [help]
+
   # Correct and execute automatically mistyped git commands, if not ambiguously
   autocorrect = 1
