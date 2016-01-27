@@ -97,6 +97,7 @@
   excludesfile = ~/.gitignore
 
 [push]
+
   default = simple
 
 [help]
