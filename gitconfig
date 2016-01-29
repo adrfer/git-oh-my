@@ -98,6 +98,7 @@
 
 [push]
 
+  # Set push behavior to fail if the current branch is not tracking a remote upstream branch
   default = simple
 
 [help]
