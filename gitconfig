@@ -101,6 +101,10 @@
   # Set push behavior to fail if the current branch is not tracking a remote upstream branch
   default = simple
 
+[merge]
+  
+  ff = only
+  
 [help]
 
   # Correct and execute automatically mistyped git commands, if not ambiguously
