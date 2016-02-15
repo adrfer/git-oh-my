@@ -77,6 +77,8 @@
 
 [color]
   ui = auto
+  
+  # Highlight grep matches
   grep = always
 
 [core]
