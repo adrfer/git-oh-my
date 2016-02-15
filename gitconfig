@@ -104,6 +104,7 @@
 
 [merge]
   
+  # Allow only fast-forward merges
   ff = only
   
 [help]
