@@ -54,6 +54,10 @@
   # List and delete ignored files that are still lurking at the repository
   show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
   delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage-all && git commit-staged #<message>
+  
+  # List files under and not under version control
+  show-files-under-version-control = ls-files
+  show-files-not-under-version-control = ls-files --others
 
   # Show the commit history for the currently active branch
   log-last-commit = log -1
