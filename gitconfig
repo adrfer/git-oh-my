@@ -19,8 +19,7 @@
   unstage = "!f() { [[ "${1}" = '.' ]] && git reset HEAD || git reset HEAD -- "${1}" ; }; f"
   
   # Discard changes in working directory
-  discard-modified-but-not-staged = checkout -- #<file>
-  discard-all-modified-but-not-staged = checkout .
+  discard-modified-but-not-staged = "!f() { [[ "${1}" = '.' ]] && git checkout . || git checkout -- "${1}" ; }; f"
 
   # Change an existing file path and stage the move
   rename-and-stage = mv #<old file> <new file>
