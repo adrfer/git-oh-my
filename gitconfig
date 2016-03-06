@@ -15,8 +15,7 @@
 [alias]
 
   # Add/remove files to/from next commit
-  stage = add #<file or dir>
-  stage-all = add .
+  stage = "!f() { [[ "${1}" = '.' ]] && git add . || git add "${1}" ; }; f"
   unstage = reset HEAD -- #<file>
   unstage-all = reset HEAD
 
