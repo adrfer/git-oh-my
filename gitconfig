@@ -16,9 +16,8 @@
 
   # Add/remove files to/from next commit
   stage = "!f() { [[ "${1}" = '.' ]] && git add . || git add "${1}" ; }; f"
-  unstage = reset HEAD -- #<file>
-  unstage-all = reset HEAD
-
+  unstage = "!f() { [[ "${1}" = '.' ]] && git reset HEAD || git reset HEAD -- "${1}" ; }; f"
+  
   # Discard changes in working directory
   discard-modified-but-not-staged = checkout -- #<file>
   discard-all-modified-but-not-staged = checkout .
