@@ -29,7 +29,7 @@
 
   # Diff changes of what is staged and unstaged
   diff-modified = diff
-  show-staged-but-not-commited = diff --staged
+  diff-staged = diff --staged
 
   # Commit staged content as a new commit
   commit-staged = commit --message #<message>
