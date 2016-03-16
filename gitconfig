@@ -28,7 +28,7 @@
   delete-and-stage = rm #<file>
 
   # Diff changes of what is staged and unstaged
-  show-modified-but-not-staged = diff
+  diff-modified = diff
   show-staged-but-not-commited = diff --staged
 
   # Commit staged content as a new commit
