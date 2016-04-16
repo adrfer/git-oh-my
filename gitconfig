@@ -21,7 +21,7 @@
   # Discard changes in working directory
   discard-modified-but-not-staged = "!f() { [[ "${1}" = '.' ]] && git checkout . || git checkout -- "${1}"; }; f"
 
-  # Change an existing file path and stage the move
+  # Change an existing file path and stage the move for commit
   rename-and-stage = mv #<old file> <new file>
 
   # Delete the file and stage the removal for commit
@@ -52,7 +52,7 @@
   show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
   delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage-all && git commit-staged #<message>
   
-  # List files under and not under version control
+  # List files under/not under version control
   show-files-under-version-control = ls-files
   show-files-not-under-version-control = ls-files --others
 
@@ -83,10 +83,10 @@
 
 [core]
   
-  # Paginate using the pager specified
+  # Paginate using the specified pager
   pager = less
   
-  # Edit commit messages by launching the editor specified
+  # Edit commit messages by launching the specified editor
   editor = vim
 
   # Highlight common whitespace problems when using git diff
