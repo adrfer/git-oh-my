@@ -17,7 +17,7 @@
   # Add/remove files to/from next commit
   stage = "!f() { [[ "${1}" = '.' ]] && git add . || git add "${1}"; }; f"
   unstage = "!f() { [[ "${1}" = '.' ]] && git reset HEAD || git reset HEAD -- "${1}"; }; f"
-  
+
   # Discard changes in working directory
   discard-modified-but-not-staged = "!f() { [[ "${1}" = '.' ]] && git checkout . || git checkout -- "${1}"; }; f"
 
@@ -50,8 +50,8 @@
 
   # List and delete ignored files that are still lurking at the repository
   show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
-  delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage-all && git commit-staged #<message>
-  
+  delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage . && git commit-staged #<message>
+
   # List files under/not under version control
   show-files-under-version-control = ls-files
   show-files-not-under-version-control = ls-files --others
@@ -82,10 +82,10 @@
   grep = always
 
 [core]
-  
+
   # Paginate using the specified pager
   pager = less
-  
+
   # Edit commit messages by launching the specified editor
   editor = vim
 
@@ -104,10 +104,10 @@
   default = simple
 
 [merge]
-  
+
   # Allow only fast-forward merges
   ff = only
-  
+
 [help]
 
   # Correct and execute automatically mistyped git commands, if not ambiguously
