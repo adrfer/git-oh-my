@@ -1,3 +1,4 @@
+
 # For more info about `git-config`, open a terminal and run:
 #
 #   man git-config
@@ -62,11 +63,11 @@
   log-contributors = shortlog --summary --numbered
   log-pretty = log --pretty=format:'%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>'
   log-commits-that-modified-file = log --oneline --follow #<file>
-  log-commits-not-yet-pushed = !git log-pretty origin/master..master
-  log-commits-from-today = !git log-pretty --since='midnight'
-  log-commits-from-yesterday = !git log-pretty --since='yesterday' --until='midnight'
-  log-commits-since-one-week-ago = !git log-pretty --since='1 week ago'
-  log-commits-since-one-month-ago = !git log-pretty --since='1 month ago'
+  log-commits-not-yet-pushed = log origin/master..master
+  log-commits-from-today = log --since='midnight'
+  log-commits-from-yesterday = log --since='yesterday' --until='midnight'
+  log-commits-since-one-week-ago = log --since='1 week ago'
+  log-commits-since-one-month-ago = log --since='1 month ago'
 
   # List all defined remotes
   show-remotes = remote --verbose
