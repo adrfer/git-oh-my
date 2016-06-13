@@ -22,4 +22,4 @@ Open a terminal and run:
     bash <(curl -sL https://raw.github.com/adrfer/git-oh-my/master/uninstall)
 
 --
-Hey, looking for some bash badassery? Check [bash-oh-my](https://github.com/adrfer/bash-oh-my).
+Hey, looking for some bash badassery? Check out [bash-oh-my](https://github.com/adrfer/bash-oh-my).
