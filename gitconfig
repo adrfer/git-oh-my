@@ -72,8 +72,10 @@
   # List all defined remotes
   show-remotes = remote --verbose
 
-  # List all created tags
+  # List and delete tags
   show-tags = tag --list
+  delete-local-tag = tag --delete #<tag>
+  delete-remote-tag = "!f() { [[ -n "${1}" ]] && git delete-local-tag "${1}" || git push origin :refs/tags/"${1}"; }; f"
 
   # List all defined aliases
   show-aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
