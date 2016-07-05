@@ -71,6 +71,9 @@
 
   # List all defined remotes
   show-remotes = remote --verbose
+  
+  # Push a new local branch to a remote repo an track it
+  push-and-track-local-branch = git push --set-upstream origin #<branch>
 
   # List and delete tags
   show-tags = tag --list
