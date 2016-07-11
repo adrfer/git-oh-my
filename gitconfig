@@ -21,7 +21,7 @@
 
   # Discard changes in working directory
   discard-modified-but-not-staged = "!f() { [[ -n "${1}" ]] && git checkout -- "${1}" || git checkout .; }; f"
-  discard-modified-and-staged = !git clean -dfx && git discard-modified-but-not-staged
+  discard-modified-and-staged = !git clean -dfx && git checkout .
 
   # Change an existing file path and stage the move for commit
   rename-and-stage = mv #<old file> <new file>
@@ -71,7 +71,7 @@
 
   # List all defined remotes
   show-remotes = remote --verbose
-  
+
   # Push a new local branch to a remote repo an track it
   push-and-track-local-branch = git push --set-upstream origin #<branch>
 
