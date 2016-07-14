@@ -50,7 +50,7 @@
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
 
-  # List and delete ignored files that are still lurking at the repository
+  # List and delete ignored files that are still lurking around
   show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
   delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage . && git commit-staged #<message>
 
@@ -69,7 +69,7 @@
   log-commits-since-one-week-ago = log --since='1 week ago'
   log-commits-since-one-month-ago = log --since='1 month ago'
 
-  # List all defined remotes
+  # List all defined remote branches
   show-remotes = remote --verbose
 
   # Push a new local branch to a remote repo an track it
