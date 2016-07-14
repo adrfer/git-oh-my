@@ -45,6 +45,7 @@
 
   # List and delete local and remote branches
   show-branches = branch --all
+  show-remote-branches = remote --verbose
   create-and-checkout-branch = checkout -b #<branch>
   delete-local-branch = branch --delete #<branch>
   delete-remote-branch = push origin --delete #<branch>
@@ -68,9 +69,6 @@
   log-commits-from-yesterday = log --since='yesterday' --until='midnight'
   log-commits-since-one-week-ago = log --since='1 week ago'
   log-commits-since-one-month-ago = log --since='1 month ago'
-
-  # List all defined remote branches
-  show-remotes = remote --verbose
 
   # Push a new local branch to a remote repo an track it
   push-and-track-local-branch = git push --set-upstream origin #<branch>
