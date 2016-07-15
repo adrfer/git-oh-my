@@ -70,7 +70,7 @@
   log-commits-since-one-week-ago = log --since='1 week ago'
   log-commits-since-one-month-ago = log --since='1 month ago'
 
-  # Push a new local branch to a remote repo an track it
+  # Push a new local branch and track it
   push-and-track-local-branch = git push --set-upstream origin #<branch>
 
   # List and delete tags
