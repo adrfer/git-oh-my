@@ -79,7 +79,7 @@ echo -n "Updating local repo ${local_repo}..."
 # After installing or updating the repo will be dirty since one will have configured the credentials
 if git checkout --quiet . >/dev/null 2>&1 && git pull --quiet origin master >/dev/null 2>&1; then
   echo ' done.'
-  cd -
+  cd - >/dev/null 2>&1
 else
   echo
   echo 'Ooops, there was an error, try again.'
