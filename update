@@ -67,7 +67,7 @@ else
   # Backup local repo
   
   echo -n "Backing up ${local_repo}..."
-  mv -f "${local_repo%/}"{," copy $(date +%s)"}
+  cp -rf "${local_repo%/}"{," copy $(date +%s)"}
   echo ' done.'
 fi
 
