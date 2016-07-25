@@ -52,8 +52,6 @@ if [[ ! -d "${local_repo}" ]]; then
     exit 0
   fi
 
-  # Clone remote repo
-
   echo -n "Cloning repo into ${local_repo}..."
 
   if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
@@ -64,8 +62,6 @@ if [[ ! -d "${local_repo}" ]]; then
     exit 1
   fi
 else
-  # Backup local repo
-  
   echo -n "Backing up ${local_repo}..."
   cp -rf "${local_repo%/}"{," copy $(date +%s)"}
   echo ' done.'
@@ -83,6 +79,7 @@ cd "${local_repo}"
 echo -n "Updating local repo ${local_repo}..."
 
 # After installing or updating the repo will be dirty since one will have configured the credentials
+
 if git checkout --quiet . >/dev/null 2>&1 && git pull --quiet origin master >/dev/null 2>&1; then
   echo ' done.'
   cd - >/dev/null 2>&1
