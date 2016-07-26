@@ -43,6 +43,9 @@
   undo-last-commit-but-keep-staged = reset --soft HEAD~1
   undo-last-commit-for-good = reset --hard HEAD~1
 
+  # Push a new local branch and track it
+  push-and-track-local-branch = git push --set-upstream origin #<branch>
+
   # List and delete local and remote branches
   show-branches = branch --all
   show-remote-branches = remote --verbose
@@ -51,6 +54,7 @@
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
   rename-local-branch = branch --move #<current branch> or <old branch> <new branch>
+  rename-remote-branch = "!f() { [[ -n "${1}" ]] && git rename-local-branch "${1}" && git delete-remote-branch "${1}" && git push-and-track-local-branch "${1}"; }; f"
 
   # List and delete ignored files that are still lurking around
   show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
@@ -70,9 +74,6 @@
   log-commits-from-yesterday = log --since='yesterday' --until='midnight'
   log-commits-since-one-week-ago = log --since='1 week ago'
   log-commits-since-one-month-ago = log --since='1 month ago'
-
-  # Push a new local branch and track it
-  push-and-track-local-branch = git push --set-upstream origin #<branch>
 
   # List and delete tags
   show-tags = tag --list
