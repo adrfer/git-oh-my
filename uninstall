@@ -16,7 +16,7 @@ fi
 
 local_repo="${HOME}/.git-oh-my"
 
-# Remove local repo
+# Remove local repo, if any
 
 if [[ -d "${local_repo}" ]]; then
   echo -n "Removing ${local_repo}..."
@@ -31,7 +31,7 @@ fi
 local_gitconfig="${HOME}/.gitconfig"
 local_gitignore="${HOME}/.gitignore"
 
-# Remove symlinks to local files
+# Remove symlinks to local files, if any
 
 files=( "${local_gitconfig}" "${local_gitignore}" )
 
