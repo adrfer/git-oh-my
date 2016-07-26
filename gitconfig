@@ -50,6 +50,7 @@
   delete-local-branch = branch --delete #<branch>
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
+  rename-local-branch = branch --move #<current branch> or <old branch> <new branch>
 
   # List and delete ignored files that are still lurking around
   show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
