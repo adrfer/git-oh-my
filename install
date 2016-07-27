@@ -6,7 +6,7 @@ set -u
 # Check if git is available
 
 if ! command -v 'git' >/dev/null 2>&1; then
-  echo -n 'Ooops, git not found. '
+  echo 'Ooops, git not found. '
   echo 'Go to https://git-scm.com for more info.'
   exit 1
 fi
