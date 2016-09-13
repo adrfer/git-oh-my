@@ -23,10 +23,10 @@
   discard-modified-but-not-staged = "!f() { [[ -n "${1}" ]] && git checkout -- "${1}" || git checkout .; }; f"
   discard-modified-and-staged = !git clean -dfx && git checkout .
 
-  # Rename the file and stage it for commit
+  # Rename and stage file for commit
   rename-and-stage = mv #<old file> <new file>
 
-  # Delete the file and stage it for commit
+  # Delete and stage file for commit
   delete-and-stage = rm #<file>
 
   # Diff changes of what is staged and unstaged
@@ -43,7 +43,7 @@
   undo-last-commit-but-keep-staged = reset --soft HEAD~1
   undo-last-commit-for-good = reset --hard HEAD~1
 
-  # Push a new local branch and track it
+  # Push and track new local branch
   push-and-track-local-branch = git push --set-upstream origin #<branch>
 
   # List and delete local and remote branches
@@ -107,7 +107,7 @@
 
 [push]
 
-  # Set push behavior to fail if the current branch is not tracking a remote branch
+  # Set push behavior to fail if the current branch is not tracking a remote
   default = simple
 
 [merge]
