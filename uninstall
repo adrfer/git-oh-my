@@ -63,7 +63,7 @@ local_repo_backup_pattern='.git-oh-my copy*'
 local_repo_backup=$(find "${HOME}" -maxdepth 1 -type d -name "${local_repo_backup_pattern}" | sort -r | head -n1)
 
 if [[ -n "${local_repo_backup}" ]]; then
-  read -r -p "Last backup was ${bold}${local_repo_backup}${normal}. Restore it (y/n [n])? "
+  read -r -p "Last backup is ${bold}${local_repo_backup}${normal}. Restore it (y/n [n])? "
 
   if [[ "${REPLY}" =~ ^[Yy]$ ]]; then
     echo -n "Restoring ${bold}${local_repo_backup}${normal}..."
