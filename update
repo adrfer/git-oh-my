@@ -89,7 +89,7 @@ echo 'Now, updating your credentials...'
 name_prompt='Your name: '
 
 if [[ -n "${name}" ]]; then
-  echo -n "Last configure name is ${bold}${name}${normal}. "
+  echo -n "Last configured name is ${bold}${name}${normal}. "
   read -r -p 'Keep it (y/n [n])? '
 
   if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
@@ -104,7 +104,7 @@ git config --global user.name "${name}"
 email_prompt='Your email: '
 
 if [[ -n "${email}" ]]; then
-  echo -n "Last configure email is ${bold}${email}${normal}. "
+  echo -n "Last configured email is ${bold}${email}${normal}. "
   read -r -p 'Keep it (y/n [n])? '
 
   if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
