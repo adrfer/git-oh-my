@@ -16,14 +16,19 @@ fi
 
 local_repo="${HOME}/.git-oh-my"
 
+# Define formatting variables
+
+bold="$(tput bold)"
+normal="$(tput sgr0)"
+
 # Remove local repo, if any
 
 if [[ -d "${local_repo}" ]]; then
-  echo -n "Removing ${local_repo}..."
+  echo -n "Removing ${bold}${local_repo}${normal}..."
   rm -rf "${local_repo}"
   echo ' done.'
 else
-  echo "Local repo ${local_repo} not found."
+  echo "Local repo ${bold}${local_repo}${normal} not found."
 fi
 
 # Define variables for files
@@ -37,17 +42,17 @@ files=( "${local_gitconfig}" "${local_gitignore}" )
 
 for file in "${files[@]}"; do
   if [[ -L "${file}" ]]; then
-    echo -n "Removing ${file}..."
+    echo -n "Removing ${bold}${file}${normal}..."
     rm -f "${file}"
     echo ' done.'
   else
-    echo "Local profile ${file} not found."
+    echo "Local profile ${bold}${file}${normal} not found."
   fi
 done
 
 # Check and restore backup, if any
 
-read -r -p "Check for ${local_repo} backups? (y/n [n])? "
+read -r -p "Check for ${bold}${local_repo}${normal} backups? (y/n [n])? "
 
 if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
   echo 'Ok then, good to go!'
@@ -58,15 +63,15 @@ local_repo_backup_pattern='.git-oh-my copy*'
 local_repo_backup=$(find "${HOME}" -maxdepth 1 -type d -name "${local_repo_backup_pattern}" | sort -r | head -n1)
 
 if [[ -n "${local_repo_backup}" ]]; then
-  read -r -p "Last backup was ${local_repo_backup}. Restore it (y/n [n])? "
+  read -r -p "Last backup was ${bold}${local_repo_backup}${normal}. Restore it (y/n [n])? "
 
   if [[ "${REPLY}" =~ ^[Yy]$ ]]; then
-    echo -n "Restoring ${local_repo_backup}..."
+    echo -n "Restoring ${bold}${local_repo_backup}${normal}..."
     mv -f "${local_repo_backup}" "${local_repo}"
     echo ' done.'
   fi
 else
-  echo "No backups found for ${local_repo}."
+  echo "No backups found for ${bold}${local_repo}${normal}."
 fi
 
 echo 'Uninstall successful, farewell!'
