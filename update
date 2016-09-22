@@ -6,34 +6,9 @@ set -u
 # Check if git is available
 
 if ! command -v 'git' >/dev/null 2>&1; then
-  echo -n 'Ooops, git not found. '
-
-  if [[ "$(uname)" != 'Darwin' ]]; then
-    echo
-    echo 'Go to https://git-scm.com for more info.'
-    exit 1
-  fi
-
-  read -r -p 'Install it (y/n [n])? '
-
-  if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
-    echo 'Ok then, nothing much to see here.'
-    exit 0
-  fi
-
-  if ! command -v 'xcode-select' >/dev/null 2>&1; then
-    echo 'Ooops, Xcode not found. '
-    read -r -p 'Install it (y/n [n])? '
-
-    if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
-      echo 'Ok then, nothing much to see here.'
-      exit 0
-    fi
-
-    if ! 'xcode-select' --install >/dev/null 2>&1; then
-      exit 1
-    fi
-  fi
+  echo 'Ooops, git not found.'
+  echo 'Go to https://git-scm.com for more info.'
+  exit 1
 fi
 
 # Define repo variables
