@@ -50,7 +50,7 @@
   show-branches = branch --all
   show-remote-branches = remote --verbose
   switch-to-local-branch = checkout #<branch>
-  create-and-switch-to-branch = checkout -b #<branch>
+  create-and-switch-to-local-branch = checkout -b #<branch>
   delete-local-branch = branch --delete #<branch>
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
