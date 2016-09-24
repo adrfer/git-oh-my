@@ -46,11 +46,11 @@
   # Push and track new local branch
   push-and-track-local-branch = git push --set-upstream origin #<branch>
 
-  # List and delete local and remote branches
+  # Manipulate local and remote branches
   show-branches = branch --all
   show-remote-branches = remote --verbose
   switch-to-branch = checkout #<branch>
-  create-and-checkout-branch = checkout -b #<branch>
+  create-and-switch-to-branch = checkout -b #<branch>
   delete-local-branch = branch --delete #<branch>
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
