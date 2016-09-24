@@ -48,7 +48,6 @@
 
   # Manipulate local and remote branches
   show-branches = branch --all
-  show-remote-branches = remote --verbose
   switch-to-local-branch = checkout #<branch>
   create-and-switch-to-local-branch = checkout -b #<branch>
   delete-local-branch = branch --delete #<branch>
