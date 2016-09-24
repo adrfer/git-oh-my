@@ -57,7 +57,7 @@
   rename-remote-branch = "!f() { [[ -n "${1}" ]] && git rename-local-branch "${1}" && git delete-remote-branch "${1}" && git push-and-track-local-branch "${1}"; }; f"
 
   # List and delete ignored files that are still lurking around
-  show-ignored-still-at-the-repository = ls-files --ignored --exclude-from=.gitignore
+  show-ignored-still-around = ls-files --ignored --exclude-from=.gitignore
   delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage . && git commit-staged #<message>
 
   # List files under/not under version control
