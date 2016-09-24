@@ -58,7 +58,7 @@
 
   # List and delete ignored files that are still lurking around
   show-ignored-still-around = ls-files --ignored --exclude-from=.gitignore
-  delete-ignored-still-at-the-repository = !git rm -r --cached . && git stage . && git commit-staged #<message>
+  delete-ignored-still-around = !git rm -r --cached . && git stage . && git commit-staged #<message>
 
   # List files under/not under version control
   show-files-under-version-control = ls-files
