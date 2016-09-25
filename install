@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-set -u
-
 # Check if git is available
 
 if ! command -v 'git' >/dev/null 2>&1; then
