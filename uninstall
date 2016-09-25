@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-set -e
-set -u
-
 # Confirm uninstall
 
 read -r -p 'Sure to uninstall (y/n [n])? '
