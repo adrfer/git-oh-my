@@ -40,7 +40,7 @@
   commit-by-amending-last-commit-message = commit --amend
 
   # Undo commited content locally
-  undo-last-commit-but-keep-staged = reset --soft HEAD~1
+  undo-last-commit-but-keep-it-staged = reset --soft HEAD~1
   undo-last-commit-for-good = reset --hard HEAD~1
 
   # Push and track new local branch
