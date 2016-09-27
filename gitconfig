@@ -35,8 +35,8 @@
 
   # Commit staged content as a new commit
   commit-staged = commit --message #<message>
-  commit-modified-and-staged = commit --all --message #<message>
-  commit-modified-staged-and-deleted = !git add --all && git commit-modified-and-staged #<message>
+  commit-modified-and-deleted-but-not-untracked = commit --all --message #<message>
+  commit-modified-staged-and-deleted = !git add --all && git commit-staged #<message>
   commit-by-amending-last-commit-message = commit --amend
 
   # Undo committed content locally
