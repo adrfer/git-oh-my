@@ -29,7 +29,7 @@
   # Delete and stage file for commit
   delete-and-stage = rm #<file>
 
-  # Diff changes of what is staged and unstaged
+  # Show unstaged and staged changes since last commit
   diff-modified = diff
   diff-staged = diff --staged
 
