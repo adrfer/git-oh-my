@@ -32,6 +32,8 @@
   # Save work in progress for future commits
   stash-modified = git stash
   stash-modified-and-untracked = git stash --include-untracked
+  show-whatever-is-stashed = git stash list
+  delete-stashed = git stash clear
 
   # Show unstaged and staged changes since last commit
   diff-modified = diff
