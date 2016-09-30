@@ -29,6 +29,9 @@
   # Delete and stage file for commit
   delete-and-stage = rm #<file>
 
+  # Save work in progress for future commits
+  stash-modified = git stash
+
   # Show unstaged and staged changes since last commit
   diff-modified = diff
   diff-staged = diff --staged
