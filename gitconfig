@@ -60,7 +60,7 @@
   delete-local-branch = branch --delete #<branch>
   delete-remote-branch = push origin --delete #<branch>
   delete-obsolete-local-remote-tracking-branches = fetch origin --prune
-  show-branches-merged-into-master = git branch --merged master
+  show-branches-merged-into-master = branch --merged master
   rename-local-branch = branch --move #<current branch> or <old branch> <new branch>
   rename-remote-branch = "!f() { [[ -n "${1}" ]] && git rename-local-branch "${1}" && git delete-remote-branch "${1}" && git push-and-track-local-branch "${1}"; }; f"
 
