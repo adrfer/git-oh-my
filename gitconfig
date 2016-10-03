@@ -34,6 +34,7 @@
   stash-modified-and-untracked = stash --include-untracked
   show-whatever-is-stashed = stash list
   delete-stashed = stash clear
+  pop-stashed = stash pop
 
   # Show unstaged and staged changes since last commit
   diff-modified = diff
