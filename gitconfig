@@ -32,7 +32,7 @@
   # Save work in progress for future commit
   stash-modified = stash
   stash-modified-and-untracked = stash --include-untracked
-  show-whatever-is-stashed = stash list
+  show-stashed = stash list
   delete-stashed = stash clear
   pop-stashed = stash pop
 
