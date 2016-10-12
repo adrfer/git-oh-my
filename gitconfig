@@ -77,7 +77,6 @@
   # Show the commit history for the currently active branch
   log-last-commit = log --max-count 1
   log-contributors = shortlog --summary --numbered
-  log-pretty = log --pretty=format:'%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>'
   log-commits-that-modified-file = log --oneline --follow #<file>
   log-commits-not-yet-pushed = log origin/master..master
   log-commits-from-today = log --since='midnight'
