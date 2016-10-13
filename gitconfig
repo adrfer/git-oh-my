@@ -114,6 +114,9 @@
 
   # Set globally patterns of files which are not meant to be tracked
   excludesfile = ~/.gitignore
+  
+  # Set project-specific configuration to ensure consistent git settings
+  attributesfile = ~/.gitattributes
 
 [push]
 
