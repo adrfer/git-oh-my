@@ -8,44 +8,35 @@ if ! command -v 'git' >/dev/null 2>&1; then
 fi
 
 # Define repository variables
-remote_repo='https://github.com/adrfer/git-oh-my.git'
 local_repo="${HOME}/.git-oh-my"
-
-# Download remote files
-if [[ ! -d "${local_repo}" ]]; then
-  echo -n "Ooops, local repo ${local_repo} not found. "
-  read -r -p 'Clone it (y/n [n])? '
-
-  if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
-    echo 'Ok then, nothing much to see here.'
-    exit 0
-  fi
-
-  echo -n "Cloning repo into ${local_repo}..."
-
-  if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
-    echo ' done.'
-  else
-    echo
-    echo 'Ooops, there was an error, try again.'
-    exit 1
-  fi
-else
-  echo -n "Backing up ${local_repo}..."
-  cp -rf "${local_repo%/}"{," copy $(date +%s)"}
-  echo ' done.'
-fi
+remote_repo='https://github.com/adrfer/git-oh-my.git'
 
 # Save credentials, if any
 name="$(git config user.name)"
 email="$(git config user.email)"
 
+# Backup local files, if any
+if [[ -d "${local_repo}" ]]; then
+  echo -n "Backing up ${local_repo}..."
+  mv -f "${local_repo%/}"{," copy $(date +%s)"}
+  echo ' done.'
+fi
+
+# Download remote files
+echo -n "Downloading some quick and dirty git files..."
+
+if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
+  echo ' done.'
+else
+  echo 'Ooops, there was an error, try again.'
+  exit 1
+fi
+
 # Update local files
 cd "${local_repo}"
+echo -n "Updating..."
 
-echo -n "Updating local repo ${local_repo}..."
-
-# After installing or updating the repo will be dirty since one will have configured the credentials
+# Note: After installing or updating, the repository will become dirty since one will have configured the credentials
 if git checkout --quiet . >/dev/null 2>&1 && git pull --quiet origin master >/dev/null 2>&1; then
   echo ' done.'
   cd - >/dev/null 2>&1
@@ -60,7 +51,7 @@ ln -sf "${local_repo}/gitconfig" "${HOME}/.gitconfig"
 ln -sf "${local_repo}/gitignore" "${HOME}/.gitignore"
 
 # Setup credentials
-echo 'Now, updating your credentials...'
+echo 'Now, setting up your credentials...'
 
 name_prompt='Your name: '
 
@@ -92,5 +83,5 @@ fi
 
 git config --global user.email "${email}"
 
-echo 'Update successful, enjoy!'
+echo 'All good, enjoy!'
 exit 0
