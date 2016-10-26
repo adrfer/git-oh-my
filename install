@@ -1,38 +1,32 @@
 #!/usr/bin/env bash
 
 # Check if git is available
-
 if ! command -v 'git' >/dev/null 2>&1; then
   echo 'Ooops, git not found. '
   echo 'Go to https://git-scm.com for more info.'
   exit 1
 fi
 
-# Define repo variables
-
-remote_repo='https://github.com/adrfer/git-oh-my.git'
+# Define repository variables
 local_repo="${HOME}/.git-oh-my"
+remote_repo='https://github.com/adrfer/git-oh-my.git'
 
 # Save credentials, if any
-
 name="$(git config user.name)"
 email="$(git config user.email)"
 
 # Define formatting variables
-
 bold="$(tput bold)"
 normal="$(tput sgr0)"
 
-# Check local repo
-
+# Backup local files, if any
 if [[ -d "${local_repo}" ]]; then
   echo -n "Backing up ${bold}${local_repo}${normal}..."
   mv -f "${local_repo%/}"{," copy $(date +%s)"}
   echo ' done.'
 fi
 
-# Clone the remote repo into the local repo
-
+# Download remote files
 echo -n "Cloning repo into ${bold}${local_repo}${normal}..."
 
 if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
@@ -43,21 +37,16 @@ else
   exit 1
 fi
 
-# Define variables for files
-
+# Setup local files
 remote_gitconfig="${local_repo}/gitconfig"
 remote_gitignore="${local_repo}/gitignore"
-
 local_gitconfig="${HOME}/.gitconfig"
 local_gitignore="${HOME}/.gitignore"
-
-# Link local files
 
 ln -sf "${remote_gitconfig}" "${local_gitconfig}"
 ln -sf "${remote_gitignore}" "${local_gitignore}"
 
-# Set up credentials
-
+# Setup credentials
 echo 'Now, setting up your credentials...'
 
 name_prompt='Your name: '
