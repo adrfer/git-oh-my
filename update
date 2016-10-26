@@ -55,16 +55,9 @@ else
   exit 1
 fi
 
-# Define variables for files
-remote_gitconfig="${local_repo}/gitconfig"
-remote_gitignore="${local_repo}/gitignore"
-
-local_gitconfig="${HOME}/.gitconfig"
-local_gitignore="${HOME}/.gitignore"
-
-# Link local files
-ln -sf "${remote_gitconfig}" "${local_gitconfig}"
-ln -sf "${remote_gitignore}" "${local_gitignore}"
+# Setup local files
+ln -sf "${local_repo}/gitconfig" "${HOME}/.gitconfig"
+ln -sf "${local_repo}/gitignore" "${HOME}/.gitignore"
 
 # Setup credentials
 echo 'Now, updating your credentials...'
