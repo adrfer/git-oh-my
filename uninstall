@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 # Confirm uninstall
-
 read -r -p 'Sure to uninstall (y/n [n])? '
 
 if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
@@ -9,17 +8,14 @@ if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
   exit 0
 fi
 
-# Define repo variable
-
+# Define repository variable
 local_repo="${HOME}/.git-oh-my"
 
 # Define formatting variables
-
 bold="$(tput bold)"
 normal="$(tput sgr0)"
 
-# Remove local repo, if any
-
+# Remove local files, if any
 if [[ -d "${local_repo}" ]]; then
   echo -n "Removing ${bold}${local_repo}${normal}..."
   rm -rf "${local_repo}"
@@ -28,13 +24,11 @@ else
   echo "Local repo ${bold}${local_repo}${normal} not found."
 fi
 
-# Define variables for files
-
+# Define configuration variables
 local_gitconfig="${HOME}/.gitconfig"
 local_gitignore="${HOME}/.gitignore"
 
-# Remove symlinks to local files, if any
-
+# Remove symlinks, if any
 files=( "${local_gitconfig}" "${local_gitignore}" )
 
 for file in "${files[@]}"; do
@@ -47,8 +41,7 @@ for file in "${files[@]}"; do
   fi
 done
 
-# Check and restore backup, if any
-
+# Backup local files, if any
 read -r -p "Check for ${bold}${local_repo}${normal} backups? (y/n [n])? "
 
 if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
