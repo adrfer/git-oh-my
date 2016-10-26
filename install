@@ -23,7 +23,7 @@ if [[ -d "${local_repo}" ]]; then
 fi
 
 # Download remote files
-echo -n "Cloning repo into ${local_repo}..."
+echo -n "Downloading some quick and dirty git files..."
 
 if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
   echo ' done.'
@@ -75,5 +75,5 @@ fi
 
 git config --global user.email "${email}"
 
-echo 'Install successful, enjoy!'
+echo 'All good, enjoy!'
 exit 0
