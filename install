@@ -15,19 +15,15 @@ remote_repo='https://github.com/adrfer/git-oh-my.git'
 name="$(git config user.name)"
 email="$(git config user.email)"
 
-# Define formatting variables
-bold="$(tput bold)"
-normal="$(tput sgr0)"
-
 # Backup local files, if any
 if [[ -d "${local_repo}" ]]; then
-  echo -n "Backing up ${bold}${local_repo}${normal}..."
+  echo -n "Backing up ${local_repo}..."
   mv -f "${local_repo%/}"{," copy $(date +%s)"}
   echo ' done.'
 fi
 
 # Download remote files
-echo -n "Cloning repo into ${bold}${local_repo}${normal}..."
+echo -n "Cloning repo into ${local_repo}..."
 
 if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
   echo ' done.'
@@ -52,7 +48,7 @@ echo 'Now, setting up your credentials...'
 name_prompt='Your name: '
 
 if [[ -n "${name}" ]]; then
-  echo -n "Last configured name is ${bold}${name}${normal}. "
+  echo -n "Last configured name is ${name}. "
   read -r -p 'Keep it (y/n [n])? '
 
   if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
@@ -67,7 +63,7 @@ git config --global user.name "${name}"
 email_prompt='Your email: '
 
 if [[ -n "${email}" ]]; then
-  echo -n "Last configured email is ${bold}${email}${normal}. "
+  echo -n "Last configured email is ${email}. "
   read -r -p 'Keep it (y/n [n])? '
 
   if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
