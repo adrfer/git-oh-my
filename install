@@ -34,13 +34,8 @@ else
 fi
 
 # Setup local files
-remote_gitconfig="${local_repo}/gitconfig"
-remote_gitignore="${local_repo}/gitignore"
-local_gitconfig="${HOME}/.gitconfig"
-local_gitignore="${HOME}/.gitignore"
-
-ln -sf "${remote_gitconfig}" "${local_gitconfig}"
-ln -sf "${remote_gitignore}" "${local_gitignore}"
+ln -sf "${local_repo}/gitconfig" "${HOME}/.gitconfig"
+ln -sf "${local_repo}/gitignore" "${HOME}/.gitignore"
 
 # Setup credentials
 echo 'Now, setting up your credentials...'
