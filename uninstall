@@ -17,7 +17,7 @@ if [[ -d "${local_repo}" ]]; then
   rm -rf "${local_repo}"
   echo ' done.'
 else
-  echo "Local repo ${local_repo} not found."
+  echo "${local_repo} not found."
 fi
 
 # Define configuration variables
@@ -33,7 +33,7 @@ for file in "${files[@]}"; do
     rm -f "${file}"
     echo ' done.'
   else
-    echo "Local profile ${file} not found."
+    echo "${file} not found."
   fi
 done
 
@@ -60,5 +60,5 @@ else
   echo "No backups found for ${local_repo}."
 fi
 
-echo 'Uninstall successful, farewell!'
+echo 'All good, farewell!'
 exit 0
