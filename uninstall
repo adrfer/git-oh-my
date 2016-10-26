@@ -16,8 +16,6 @@ if [[ -d "${local_repo}" ]]; then
   echo -n "Removing ${local_repo}..."
   rm -rf "${local_repo}"
   echo ' done.'
-else
-  echo "${local_repo} not found."
 fi
 
 # Define configuration variables
@@ -32,8 +30,6 @@ for file in "${files[@]}"; do
     echo -n "Removing ${file}..."
     rm -f "${file}"
     echo ' done.'
-  else
-    echo "${file} not found."
   fi
 done
 
