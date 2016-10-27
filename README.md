@@ -11,13 +11,9 @@ To install, open a terminal and run:
 
 ## Update
 
-Open a terminal and run:
-
     bash <(curl -sL https://raw.github.com/adrfer/git-oh-my/master/update)
 
 ## Uninstall
-
-Open a terminal and run:
 
     bash <(curl -sL https://raw.github.com/adrfer/git-oh-my/master/uninstall)
 
