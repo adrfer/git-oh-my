@@ -127,6 +127,9 @@
 
   # Allow only fast-forward merges
   ff = only
+  
+  # Always show stats at the end of a merge
+  stat = true
 
 [help]
 
