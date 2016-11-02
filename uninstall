@@ -12,7 +12,7 @@ fi
 local_repo="${HOME}/.git-oh-my"
 
 # Remove existing files, if any
-echo -n "Removing existing git files..."
+echo -n 'Removing existing git files...'
 
 if [[ -d "${local_repo}" ]]; then
   rm -rf "${local_repo}"
@@ -46,7 +46,7 @@ if [[ -n "${local_repo_backup}" ]]; then
   read -r -p "Last backup is ${local_repo_backup}. Restore it (y/n [n])? "
 
   if [[ "${REPLY}" =~ ^[Yy]$ ]]; then
-    echo -n "Restoring backup..."
+    echo -n 'Restoring backup...'
     mv -f "${local_repo_backup}" "${local_repo}"
     echo ' done.'
   fi
