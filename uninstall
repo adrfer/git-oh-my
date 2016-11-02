@@ -8,33 +8,31 @@ if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
   exit 0
 fi
 
-# Define repository variable
+# Define repository variables
 local_repo="${HOME}/.git-oh-my"
 
-# Remove local files, if any
+# Remove existing files, if any
+echo -n "Removing existing git files..."
+
 if [[ -d "${local_repo}" ]]; then
-  echo -n "Removing ${local_repo}..."
   rm -rf "${local_repo}"
-  echo ' done.'
 fi
 
-# Define configuration variables
 local_gitconfig="${HOME}/.gitconfig"
 local_gitignore="${HOME}/.gitignore"
 
-# Remove symlinks, if any
 files=( "${local_gitconfig}" "${local_gitignore}" )
 
 for file in "${files[@]}"; do
   if [[ -L "${file}" ]]; then
-    echo -n "Removing ${file}..."
     rm -f "${file}"
-    echo ' done.'
   fi
 done
 
-# Backup local files, if any
-read -r -p "Check for ${local_repo} backups? (y/n [n])? "
+echo ' done.'
+
+# Restore existing backups, if any
+read -r -p 'Check for backups? (y/n [n])? '
 
 if [[ ! "${REPLY}" =~ ^[Yy]$ ]]; then
   echo 'Ok then, good to go!'
@@ -48,12 +46,12 @@ if [[ -n "${local_repo_backup}" ]]; then
   read -r -p "Last backup is ${local_repo_backup}. Restore it (y/n [n])? "
 
   if [[ "${REPLY}" =~ ^[Yy]$ ]]; then
-    echo -n "Restoring ${local_repo_backup}..."
+    echo -n "Restoring backup..."
     mv -f "${local_repo_backup}" "${local_repo}"
     echo ' done.'
   fi
 else
-  echo "No backups found for ${local_repo}."
+  echo 'No backups found.'
 fi
 
 echo 'All good, farewell!'
