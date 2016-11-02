@@ -18,21 +18,23 @@ email="$(git config user.email)"
 # Update existing files or download new ones
 if [[ -d "${local_repo}" ]]; then
   cd "${local_repo}"
-  echo -n "Updating some quick and dirty git files..."
+  echo -n 'Updating some quick and dirty git files...'
 
   if git checkout --quiet . >/dev/null 2>&1 && git pull --quiet origin master >/dev/null 2>&1; then
     echo ' done.'
     cd - >/dev/null 2>&1
   else
+    echo
     echo 'Ooops, there was an error, try again.'
     exit 1
   fi
 else
-  echo -n "Downloading some quick and dirty git files..."
+  echo -n 'Downloading some quick and dirty git files...'
 
   if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
     echo ' done.'
   else
+    echo
     echo 'Ooops, there was an error, try again.'
     exit 1
   fi
