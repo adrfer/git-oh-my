@@ -15,15 +15,15 @@ remote_repo='https://github.com/adrfer/git-oh-my.git'
 name="$(git config user.name)"
 email="$(git config user.email)"
 
-# Backup local files, if any
+# Backup existing files, if any
 if [[ -d "${local_repo}" ]]; then
-  echo -n "Backing up ${local_repo}..."
+  echo -n 'Backing up existing git files...'
   mv -f "${local_repo%/}"{," copy $(date +%s)"}
   echo ' done.'
 fi
 
-# Download remote files
-echo -n "Downloading some quick and dirty git files..."
+# Download new files
+echo -n 'Downloading some quick and dirty git files...'
 
 if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
   echo ' done.'
@@ -33,11 +33,10 @@ else
   exit 1
 fi
 
-# Setup local files
+# Setup credentials
 ln -sf "${local_repo}/gitconfig" "${HOME}/.gitconfig"
 ln -sf "${local_repo}/gitignore" "${HOME}/.gitignore"
 
-# Setup credentials
 echo 'Now, setting up your credentials...'
 
 name_prompt='Your name: '
