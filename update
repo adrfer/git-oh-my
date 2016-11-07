@@ -40,10 +40,10 @@ else
   fi
 fi
 
-# Setup credentials
 ln -sf "${local_repo}/gitconfig" "${HOME}/.gitconfig"
 ln -sf "${local_repo}/gitignore" "${HOME}/.gitignore"
 
+# Setup credentials
 echo 'Now, setting up your credentials...'
 
 name_prompt='Your name: '
