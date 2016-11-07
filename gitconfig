@@ -118,6 +118,11 @@
   # Set project-specific configuration to ensure consistent git settings
   attributesfile = ~/.gitattributes
 
+[fetch]
+
+  # Delete references to branches that don't exist on the remote
+  prune = true
+
 [push]
 
   # Set push behavior to fail if the current branch is not tracking a remote
