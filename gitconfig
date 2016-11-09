@@ -135,8 +135,3 @@
   
   # Always show stats at the end of a merge
   stat = true
-
-[help]
-
-  # Correct and execute automatically mistyped git commands, if not ambiguously
-  autocorrect = 50
