@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 # Check if git is available
-if ! command -v 'git' >/dev/null 2>&1; then
+if ! command -v 'git' >/dev/null; then
   echo 'Ooops, git not found.'
-  echo 'Go to https://git-scm.com for more info.'
   exit 1
 fi
 
@@ -11,7 +10,7 @@ fi
 local_repo="${HOME}/.git-oh-my"
 remote_repo='https://github.com/adrfer/git-oh-my.git'
 
-# Save credentials, if any
+# Save git credentials, if any
 name="$(git config user.name)"
 email="$(git config user.email)"
 
@@ -19,31 +18,31 @@ email="$(git config user.email)"
 if [[ -d "${local_repo}" ]]; then
   cd "${local_repo}"
   echo -n 'Updating some quick and dirty git files...'
-
-  if git checkout --quiet . >/dev/null 2>&1 && git pull --quiet origin master >/dev/null 2>&1; then
+  
+  if git checkout . && git pull origin master >/dev/null 2>&1; then
+    cd - >/dev/null
     echo ' done.'
-    cd - >/dev/null 2>&1
   else
     echo
-    echo 'Ooops, there was an error, try again.'
+    echo "Ooops, unable to access ${remote_repo}, try again."
     exit 1
   fi
 else
   echo -n 'Downloading some quick and dirty git files...'
 
-  if git clone --quiet "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
+  if git clone "${remote_repo}" "${local_repo}" >/dev/null 2>&1; then
     echo ' done.'
   else
     echo
-    echo 'Ooops, there was an error, try again.'
+    echo "Ooops, unable to access ${remote_repo}, try again."
     exit 1
   fi
 fi
 
 ln -sf "${local_repo}/gitconfig" "${HOME}/.gitconfig"
-ln -sf "${local_repo}/gitignore" "${HOME}/.gitignore"
+ln -sf "${local_repo}}/gitignore" "${HOME}/.gitignore"
 
-# Setup credentials
+# Setup git credentials
 echo 'Now, setting up your credentials...'
 
 name_prompt='Your name: '
