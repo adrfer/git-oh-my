@@ -107,7 +107,7 @@
   editor = vim
 
   # Highlight common whitespace problems when using git diff
-  whitespace = trailing-space
+  whitespace = tab-in-indent, trailing-space
 
   # Prevent CRLFs from getting written into the repository by converting them to LF
   autocrlf = input
