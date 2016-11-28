@@ -8,10 +8,13 @@
 #
 # Also, check git-scm.com/docs/gitignore and/or refer to github.com/github/gitignore.
 
+# Folder view configuration files
 .DS_Store
-.Spotlight-V100
-.Trashes
+
+# Thumbnail cache files
+._*
 Icon?
 
-# Thumbnails
-._*
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
