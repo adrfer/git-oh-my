@@ -20,8 +20,9 @@ fi
 
 local_gitconfig="${HOME}/.gitconfig"
 local_gitignore="${HOME}/.gitignore"
+local_gitmessage="${HOME}/.gitmessage"
 
-files=( "${local_gitconfig}" "${local_gitignore}" )
+files=( "${local_gitconfig}" "${local_gitignore}" "${local_gitmessage}" )
 
 for file in "${files[@]}"; do
   if [[ -L "${file}" ]]; then
