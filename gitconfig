@@ -9,6 +9,7 @@
 # Also, check git-scm.com/docs/git-config.
 
 [user]
+
   name =
   email =
 
