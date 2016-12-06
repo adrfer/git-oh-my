@@ -41,8 +41,8 @@
   diff-staged = diff --staged
 
   # Commit staged content
-  commit-staged = commit #<files>
-  commit-modified-and-deleted-but-not-untracked = commit --all #<files>
+  commit-staged = commit --no-status #<files>
+  commit-modified-and-deleted-but-not-untracked = commit --all --no-status #<files>
   commit-modified-staged-and-deleted = !git add --all && git commit-staged #<files>
   commit-by-amending-last-commit-message = commit --amend
 
