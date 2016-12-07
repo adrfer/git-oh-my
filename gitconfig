@@ -51,7 +51,7 @@
   undo-last-commit-for-good = reset --hard HEAD~1
 
   # Push and track new local branch
-  push-and-track-local-branch = push --set-upstream origin #<branch>
+  push-and-track-local-branch = "!f() { [[ -n "${1}" ]] && git push --set-upstream origin "${1}" || git push --set-upstream origin master; }; f"
 
   # Manipulate local and remote branches
   show-branches = branch --all
