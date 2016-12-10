@@ -17,6 +17,12 @@ To install, open a terminal and run:
 
     bash <(curl -sL https://raw.github.com/adrfer/git-oh-my/master/uninstall)
 
+## Customize
+
+#### The `~/.gitconfig.local` file
+
+To further customize git while using Git Oh My, put whatever you need at the `~/.gitconfig.local` file.
+
 --
 Hey, looking for some bash badassery? Check out [bash-oh-my](https://github.com/adrfer/bash-oh-my).
 
