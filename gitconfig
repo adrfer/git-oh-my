@@ -140,3 +140,8 @@
   
   # Always show stats at the end of a merge
   stat = true
+
+[include]
+
+  # Source custom configurations, if any
+  path = ~/.gitconfig.local
