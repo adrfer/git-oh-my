@@ -21,7 +21,7 @@ To install, open a terminal and run:
 
 #### The `~/.gitconfig.local` file
 
-To further customize git while using Git Oh My, put whatever you need at the `~/.gitconfig.local` file.
+To further customize your git setup while using Git Oh My, put whatever you need at the `~/.gitconfig.local` file.
 
 --
 Hey, looking for some bash badassery? Check out [bash-oh-my](https://github.com/adrfer/bash-oh-my).
