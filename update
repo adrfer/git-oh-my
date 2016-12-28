@@ -40,8 +40,8 @@ else
 fi
 
 ln -sf "${local_repo}/gitconfig" "${HOME}/.gitconfig"
-ln -sf "${local_repo}}/gitignore" "${HOME}/.gitignore"
-ln -sf "${local_repo}}/gitmessage" "${HOME}/.gitmessage"
+ln -sf "${local_repo}/gitignore" "${HOME}/.gitignore"
+ln -sf "${local_repo}/gitmessage" "${HOME}/.gitmessage"
 
 # Setup git credentials
 echo 'Now, setting up your credentials...'
