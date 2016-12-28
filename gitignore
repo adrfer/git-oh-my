@@ -1,4 +1,4 @@
-# For more info about `gitignore`, open a terminal and run:
+# For more info about gitignore, open a terminal and run:
 #
 #   man gitignore
 #
@@ -6,7 +6,7 @@
 #
 #   git help ignore
 #
-# Also, check git-scm.com/docs/gitignore and/or refer to github.com/github/gitignore.
+# Also, check git-scm.com/docs/gitignore and/or refer to github.com/github/gitignore
 
 # Folder view configuration files
 .DS_Store
