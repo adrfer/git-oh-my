@@ -1,4 +1,4 @@
-# For more info about `git-config`, open a terminal and run:
+# For more info about git-config, open a terminal and run:
 #
 #   man git-config
 #
@@ -6,7 +6,7 @@
 #
 #   git help config
 #
-# Also, check git-scm.com/docs/git-config.
+# Also, check git-scm.com/docs/git-config
 
 [user]
 
