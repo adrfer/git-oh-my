@@ -39,6 +39,7 @@
   # Show unstaged and staged changes since last commit
   diff-modified = diff
   diff-staged = diff --staged
+  diff-from-last-commit = diff HEAD^ HEAD
 
   # Commit staged content
   commit-staged = commit --no-status #<files>
