@@ -91,6 +91,10 @@
   # List all aliases
   show-aliases = !git config --get-regexp 'alias.*' | colrm 1 6 | sed 's/[ ]/ = /' | sort
   show-aliases-contaning = !git show-aliases | grep -Ei --color \"${1}\" "#"
+  
+  # Deal with typos
+  pul = pull
+  psuh = push
 
 [color]
 
