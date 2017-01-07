@@ -39,7 +39,7 @@
   diff-staged = diff --staged
   diff-from-last-commit = diff HEAD^ HEAD
 
-  # Commit staged content
+  # Commit modified, staged, and/or deleted content
   commit-staged = commit --no-status #<files>
   commit-modified-and-deleted-but-not-untracked = commit --all --no-status #<files>
   commit-modified-staged-and-deleted = !git add --all && git commit-staged #<files>
