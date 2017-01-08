@@ -73,6 +73,9 @@
   show-whatever-is-under-version-control = ls-files
   show-whatever-is-not-under-version-control = ls-files --others
 
+  # List files modified as part of the given commit
+  show-whatever-was-modified-in-commit = !git diff "${1:-HEAD}" "${1:-HEAD}"\^ --name-only --relative
+
   # Show the commit history for the currently active branch
   log-last-commit = log --max-count 1
   log-contributors = shortlog --summary --numbered
