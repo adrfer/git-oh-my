@@ -19,7 +19,7 @@ if [[ -d "${local_repo}" ]]; then
   cd "${local_repo}"
   echo -n 'Updating some quick and dirty git files...'
   
-  if git checkout . && git pull origin master >/dev/null 2>&1; then
+  if git reset --hard && git pull origin master >/dev/null 2>&1; then
     cd - >/dev/null
     echo ' done.'
   else
