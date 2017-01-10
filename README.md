@@ -1,7 +1,7 @@
 # Git Oh My
 Quick and dirty git files for the lazy ones.
 
-Tested against `GNU bash 3.2.57` and `Git 2.8.4`.
+Tested against `GNU bash 3.2.57` and `Git 2.10.1`.
 
 ## Install
 
