@@ -1,11 +1,13 @@
 
 
+
+
 # 50-character subject line, capitalized and in the imperative.
 # 
-# 72-character wrapped longer description. This should answer:
+# 72-character wrapped longer description that should answer:
 # 
 # * Why was this change necessary?
 # * How does it address the problem? 
 # * Are there any side effects?
 # 
-# Include a link to the ticket, if any.
+# Include a link to the related ticket, if any.
