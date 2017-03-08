@@ -5,3 +5,8 @@
 # Also, check git-scm.com/docs/git-config
 # 
 # /!\ Make your own customizations in here
+
+[format]
+
+  # Custom output format to git log and git show
+  pretty = format:%C(auto)%h %C(reset)%s %C(blue)(%cr) %C(red)<%an>
