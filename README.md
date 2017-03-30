@@ -23,7 +23,7 @@ To install, open a terminal and run:
 
 To further customize your git setup, put whatever you need at the `~/.gitconfig.local` file. See example file within this repository.
 
---
+##
 Hey, looking for some bash badassery? Check out [bash-oh-my](https://github.com/adrfer/bash-oh-my).
 
 Interested in transforming you machine into an awesome development one? Take a look at [mumm-ra](https://github.com/adrfer/mumm-ra).
